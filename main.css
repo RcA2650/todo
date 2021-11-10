@@ -1,0 +1,21 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+    text-align: center;
+}
+
+ul{
+    list-style-position: inside;
+}
+
+.top{
+    background: rgb(248, 109, 109);
+    padding-top: 20px;
+    margin: 0;
+}
+
+.addto{
+    text-align: left;
+}

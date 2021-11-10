@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="top">
+        <h1>Todo App</h1>
+        <hr id="main-line">
+    </div>
+    <div>
+        <h2>Add Todo</h2>
+        <hr>
+        <form>
+            <input type="text" id="add-box">
+            <button id="add-btn" onclick="addTask(); return false;" >Add</button>
+        </form>
+    </div>
+    <div>
+        <h2>Stuff to do</h2>
+        <hr>
+    </div>
+    <div class="list">
+        <ul id="tlist">
+        
+        </ul>
+    </div>
+    <br>
+    <div>
+        <h2>Completed Items</h2>
+        <hr>
+    </div>
+    <div class="list">
+        <ul id="tlist">
+            <li>Completed Test Item</li>
+        </ul>
+    </div>
+</body>
+</html>
