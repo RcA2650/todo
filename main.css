@@ -19,3 +19,11 @@ ul{
 .addto{
     text-align: left;
 }
+
+input[type=checkbox]{
+    padding-right: 2em;
+}
+input[type=checkbox]:checked +label.strikethrough{
+    text-decoration: line-through;
+    opacity: 50%;
+}
