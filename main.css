@@ -27,3 +27,6 @@ input[type=checkbox]:checked +label.strikethrough{
     text-decoration: line-through;
     opacity: 50%;
 }
+.tlist{
+    text-align: left;
+}

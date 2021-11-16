@@ -34,6 +34,7 @@ function addTask(taskName)
         // li.appendChild(newTodo);
         var doneBox = document.createElement("input");
         doneBox.id = `newItemBox-${count}`;
+        doneBox.style.display = 'none';
 
         var label = document.createElement("label");
         label.setAttribute("class","strikethrough");
@@ -44,9 +45,13 @@ function addTask(taskName)
         label.setAttribute("for",`newItemLabel-${count}`);
         //var t = document.createTextNode(lbl);
         doneBox.type = "checkbox";
-        
+        var deleteButton = document.createElement("button");
+        deleteButton.id = "deleteButton";
+        deleteButton.innerText = "Delete";
+        deleteButton.setAttribute("onclick", "deleteItem(event)");
         newTodo.appendChild(doneBox);
         newTodo.appendChild(label);
+        newTodo.appendChild(deleteButton);
         
         //newTodo.appendChild(t);
         
@@ -58,19 +63,12 @@ function addTask(taskName)
     }
     
 }
+function deleteItem(e)
+{
+    var idDelete = e.target.id;
+    document.getElementById(idDelete).parentElement.remove();
+}
 
-// var checkBox = document.querySelector("input[type=checkbox]");
-
-// checkBox.addEventListener('change', function(){
-//     if(this.checked){
-//        comsole.log(document.getElementById(`newItemBox-${count+1}`));
-//     }
-
-// });
-// function check(this)
-// {
-
-// }
 function check(e)
 {
     // alert(e.target.innerText);
@@ -88,11 +86,10 @@ function check(e)
         //let val = e.target.innerText;
         
         document.getElementById(idOfTarget).previousSibling.checked=true;
-        // var tempToDo = document.createElement("li");
         var tempToDo  = document.getElementById(idOfTarget).parentElement.cloneNode(true);
-        console.log(document.getElementById(idOfTarget).parentElement);
+        //console.log(document.getElementById(idOfTarget).parentElement);
         document.getElementById(idOfTarget).parentElement.remove();
-        console.log(tempToDo);
+        //console.log(tempToDo);
         document.getElementById("clist").appendChild(tempToDo);
     }
     
