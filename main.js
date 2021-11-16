@@ -75,25 +75,35 @@ function check(e)
 {
     // alert(e.target.innerText);
     // alert(e.target.id);
-    let val = e.target.innerText;
-    let idCompete = e.target.id;
-    document.getElementById(e.target.id).previousSibling.checked=true;
-    // var tempToDo = document.createElement("li");
-    var tempToDo  = document.getElementById(e.target.id).parentElement.cloneNode(true);
-    console.log(document.getElementById(e.target.id).parentElement);
-    document.getElementById(e.target.id).parentElement.remove();
-    console.log(tempToDo);
+    let idOfTarget = e.target.id;
+    if(document.getElementById(e.target.id).previousSibling.checked === true)
+    {
+        document.getElementById(idOfTarget).previousSibling.checked = false;
+        var tempToDo = document.getElementById(idOfTarget).parentElement.cloneNode(true);
+        document.getElementById(idOfTarget).parentElement.remove();
+        document.getElementById("tlist").appendChild(tempToDo);
+    }
+    else
+    {
+        //let val = e.target.innerText;
+        
+        document.getElementById(idOfTarget).previousSibling.checked=true;
+        // var tempToDo = document.createElement("li");
+        var tempToDo  = document.getElementById(idOfTarget).parentElement.cloneNode(true);
+        console.log(document.getElementById(idOfTarget).parentElement);
+        document.getElementById(idOfTarget).parentElement.remove();
+        console.log(tempToDo);
+        document.getElementById("clist").appendChild(tempToDo);
+    }
+    
 
-    document.getElementById("clist").appendChild(tempToDo);
-
-
-    //document.getElementById(e.target.id).setAttribute("style", "text-decoration: line-through");
+    //document.getElementById(idOfTarget).setAttribute("style", "text-decoration: line-through");
    // document.getElementById(e.target.id).parentElement.checked = true;
     //var newCompleted = document.createElement("li");
     //newCompleted.appendChild(e.target);
     
    // e.target.style.text-decoration : "line-through";
-   // document.getElementById(idCompete);
+   // document.getElementById(idOfTarget);
     //document.getElementById("clist").appendChild(newTodo);
 
 }
