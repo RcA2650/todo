@@ -4,6 +4,9 @@ body{
     padding: 0;
     margin-top: 0;
     text-align: center;
+    background: rgb(66, 3, 182);
+    color: white;
+
 }
 
 ul{
@@ -11,9 +14,13 @@ ul{
 }
 
 .top{
-    background: rgb(248, 109, 109);
-    padding-top: 20px;
+    padding: 20px;
+    
     margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    /* font-weight: 900; */
+    font-size: larger;
+    color: white;
 }
 
 .addto{
@@ -32,12 +39,9 @@ input[type=checkbox]:checked +label.strikethrough{
 }
 
 #deleteButton{
-    background: rgb(255, 0, 0);
-    border-radius: 10%;
-    border: 0px;
-    
+    color: gray;
 }
 #deleteButton:hover
 {
-    color: white;
+    color: red;
 }

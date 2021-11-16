@@ -45,17 +45,19 @@ function addTask(taskName)
         label.setAttribute("for",`newItemLabel-${count}`);
         //var t = document.createTextNode(lbl);
         doneBox.type = "checkbox";
-        var deleteButton = document.createElement("button");
+        var deleteButton = document.createElement("i");
         deleteButton.id = "deleteButton";
-        deleteButton.innerText = "Delete";
+        deleteButton.setAttribute("class", "fas fa-times");
+        // deleteButton.innerText = "Delete";
         deleteButton.setAttribute("onclick", "deleteItem(event)");
         newTodo.appendChild(doneBox);
         newTodo.appendChild(label);
+        newTodo.appendChild(document.createTextNode('\u00A0'));
         newTodo.appendChild(deleteButton);
         
         //newTodo.appendChild(t);
         
-        document.getElementById("tlist").appendChild(newTodo);
+        document.getElementById("toDoList").appendChild(newTodo);
         document.getElementById("add-box").value = "";
         pending[pendingNumber] = newItem;
         //console.log(pending);
@@ -79,7 +81,7 @@ function check(e)
         document.getElementById(idOfTarget).previousSibling.checked = false;
         var tempToDo = document.getElementById(idOfTarget).parentElement.cloneNode(true);
         document.getElementById(idOfTarget).parentElement.remove();
-        document.getElementById("tlist").appendChild(tempToDo);
+        document.getElementById("toDoList").appendChild(tempToDo);
     }
     else
     {
@@ -90,7 +92,7 @@ function check(e)
         //console.log(document.getElementById(idOfTarget).parentElement);
         document.getElementById(idOfTarget).parentElement.remove();
         //console.log(tempToDo);
-        document.getElementById("clist").appendChild(tempToDo);
+        document.getElementById("completedList").appendChild(tempToDo);
     }
     
 
@@ -101,7 +103,7 @@ function check(e)
     
    // e.target.style.text-decoration : "line-through";
    // document.getElementById(idOfTarget);
-    //document.getElementById("clist").appendChild(newTodo);
+    //document.getElementById("completedList").appendChild(newTodo);
 
 }
 
