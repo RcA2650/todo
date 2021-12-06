@@ -18,15 +18,24 @@
         <h1>Todo App</h1>
         
     </div>
+    <div class="firstTodoList">
+        <br><br>
+        <button id="first-list-btn" onclick="firstList(); return false;" > +New List </button>
+
+    </div>
     <div class="addtodo">
         <h2>Add Todo</h2>
         <hr>
         <form>
-            <input type="text" id="add-box">
+            <input type="text" placeholder="Enter name of the todo." id="list-name-box">
+            <br><br>
+            <input type="text" placeholder="Add tasks here. . ." id="add-box">
+            <br><br>
             <button id="add-btn" onclick="addTask(); return false;" >Add</button>
+            <br><br>
         </form>
     </div>
-    <div>
+    <div class = "list">
         <h2>Stuff to do</h2>
         <hr>
     </div>
@@ -36,7 +45,7 @@
         </ul>
     </div>
     <br>
-    <div>
+    <div class = "list">
         <h2>Completed Items</h2>
         <hr>
     </div>

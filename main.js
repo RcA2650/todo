@@ -1,5 +1,6 @@
 var taskName = document.getElementById("add-box");
 var addBtn = document.getElementById("add-btn");
+
 count=0;
 let pendingNumber = 0;
 let completedNumber = 0;
@@ -12,15 +13,29 @@ let completed = {
 
 }
 
+// function makeAList()
+// {
+//     var newTodoSection = 
+// }
 
+function firstList() // Function to provide the form to create the first Todo list.
+{
+    document.getElementsByClassName("firstTodoList")[0].style.display = "none";
+    document.getElementsByClassName("addtodo")[0].style.display = "block";
+    var listDivs = document.getElementsByClassName("list");
+    for(var i = 0; i<listDivs.length;i++)
+    {
+        listDivs[i].style.display = "block";
+    }
+    
+}
 function addTask(taskName)
 {
-    //var divForItem = document.createElement("div");
-    //divForItem.setAttribute("class", `itemDiv-${count+1}`);
+
     var newTodo = document.createElement("li");
     newTodo.id = `newItemList-${count}`;
     
-    //divForItem.appendChild(newTodo);
+    pending;
     var newItem = document.getElementById("add-box").value;
     if(newItem === "")
     {
@@ -29,9 +44,6 @@ function addTask(taskName)
     else
     {
         
-        //document.getElementsByClassName("list").setAttribute("onclick", "check(event)");
-        // divForItem.setAttribute("onclick", "check(event)");
-        // li.appendChild(newTodo);
         var doneBox = document.createElement("input");
         doneBox.id = `newItemBox-${count}`;
         doneBox.style.display = 'none';
@@ -43,24 +55,20 @@ function addTask(taskName)
         label.id = `newItem-${count}`;
         label.setAttribute("onclick", "check(event)");
         label.setAttribute("for",`newItemLabel-${count}`);
-        //var t = document.createTextNode(lbl);
         doneBox.type = "checkbox";
         var deleteButton = document.createElement("i");
         deleteButton.id = "deleteButton";
         deleteButton.setAttribute("class", "fas fa-times");
-        // deleteButton.innerText = "Delete";
         deleteButton.setAttribute("onclick", "deleteItem(event)");
         newTodo.appendChild(doneBox);
         newTodo.appendChild(label);
         newTodo.appendChild(document.createTextNode('\u00A0'));
         newTodo.appendChild(deleteButton);
         
-        //newTodo.appendChild(t);
         
         document.getElementById("toDoList").appendChild(newTodo);
         document.getElementById("add-box").value = "";
         pending[pendingNumber] = newItem;
-        //console.log(pending);
         pendingNumber+=1;
     }
     
@@ -73,8 +81,6 @@ function deleteItem(e)
 
 function check(e)
 {
-    // alert(e.target.innerText);
-    // alert(e.target.id);
     let idOfTarget = e.target.id;
     if(document.getElementById(e.target.id).previousSibling.checked === true)
     {
@@ -85,25 +91,13 @@ function check(e)
     }
     else
     {
-        //let val = e.target.innerText;
+
         
         document.getElementById(idOfTarget).previousSibling.checked=true;
         var tempToDo  = document.getElementById(idOfTarget).parentElement.cloneNode(true);
-        //console.log(document.getElementById(idOfTarget).parentElement);
         document.getElementById(idOfTarget).parentElement.remove();
-        //console.log(tempToDo);
         document.getElementById("completedList").appendChild(tempToDo);
     }
-    
-
-    //document.getElementById(idOfTarget).setAttribute("style", "text-decoration: line-through");
-   // document.getElementById(e.target.id).parentElement.checked = true;
-    //var newCompleted = document.createElement("li");
-    //newCompleted.appendChild(e.target);
-    
-   // e.target.style.text-decoration : "line-through";
-   // document.getElementById(idOfTarget);
-    //document.getElementById("completedList").appendChild(newTodo);
 
 }
 

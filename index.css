@@ -23,8 +23,12 @@ ul{
     color: white;
 }
 
-.addto{
-    text-align: left;
+.addtodo{
+    display: none;
+}
+
+.list{
+    display: none;
 }
 
 input[type=checkbox]{
